@@ -41,7 +41,7 @@ CodeMirror.defineMode("julia", function(_conf, parserConf) {
   // tokenizers
   function tokenBase(stream, state) {
     // Handle scope changes
-    leaving_expr = state.leaving_expr;
+    var leaving_expr = state.leaving_expr;
     state.leaving_expr = false;
     if(leaving_expr) {
       if(stream.match(/^'+/)) {
